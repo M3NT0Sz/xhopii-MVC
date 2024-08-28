@@ -3,6 +3,7 @@
 require_once "../model/BancoDeDados.php";
 require_once "../model/Produto.php";
 
+
 class Controlador
 {
     //Atributos
@@ -21,6 +22,8 @@ class Controlador
         $produto = new Produto($nome, $fabricante, $descricao, $valor);
         $this->bancoDeDados->inserirProduto($produto);
     }
+
+
 
     public function visualizarProduto(){
         $listaProdutos = $this->bancoDeDados->retornarProdutos();

@@ -33,7 +33,7 @@
 
     <section class="conteudo-cadastro">
         <section class="conteudo-formulario-cadastro">
-            <form method="POST" action="../processamento/processamento.php">
+            <form method="POST" action="../model/Cliente.php">
                 <label>Cadastrar Cliente</label>
                 <input type="text" placeholder="Nome" name="inputNome">
                 <input type="text" placeholder="Sobrenome" name="inputSobrenome">
