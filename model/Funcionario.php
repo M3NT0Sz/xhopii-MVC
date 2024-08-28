@@ -1,6 +1,6 @@
 <?php
 
-class Funcinario{
+class Funcionario{
 
     protected $nome;
     

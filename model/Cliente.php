@@ -1,6 +1,7 @@
 <?php
 
-class Cliente{
+class Cliente
+{
 
     protected $nome;
 
@@ -16,7 +17,8 @@ class Cliente{
 
     protected $senha;
 
-    public function __construct($nome, $sobrenome, $cpf, $dataNascimento, $tele, $email, $senha){
+    public function __construct($nome, $sobrenome, $cpf, $dataNascimento, $tele, $email, $senha)
+    {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
@@ -26,67 +28,73 @@ class Cliente{
         $this->senha = $senha;
     }
 
-    public function get_nome(){
-        return($this->nome);
+    public function get_Nome()
+    {
+        return ($this->nome);
     }
-    
-    public function set_nome($nome){
+
+    public function set_Nome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function get_sobrenome(){
-        return($this->sobrenome);
+    public function get_Sobrenome()
+    {
+        return ($this->sobrenome);
     }
-    
-    public function set_sobrenome($sobrenome){
+
+    public function set_Sobrenome($sobrenome)
+    {
         $this->sobrenome = $sobrenome;
     }
 
-    public function get_cpf(){
-        return($this->cpf);
+    public function get_Cpf()
+    {
+        return ($this->cpf);
     }
-    
-    public function set_cpf($cpf){
+
+    public function set_Cpf($cpf)
+    {
         $this->cpf = $cpf;
     }
 
-    public function get_dataNascimento(){
-        return($this->dataNascimento);
+    public function get_DataNasc()
+    {
+        return ($this->dataNascimento);
     }
-    
-    public function set_dataNascimento($dataNascimento){
+
+    public function set_DataNasc($dataNascimento)
+    {
         $this->dataNascimento = $dataNascimento;
     }
 
-    public function get_tele(){
-        return($this->tele);
+    public function get_Telefone()
+    {
+        return ($this->tele);
     }
-    
-    public function set_tele($tele){
+
+    public function set_Telefone($tele)
+    {
         $this->tele = $tele;
     }
 
-    public function get_email(){
-        return($this->email);
+    public function get_Email()
+    {
+        return ($this->email);
     }
-    
-    public function set_email($email){
+
+    public function set_Email($email)
+    {
         $this->email = $email;
     }
 
-    public function get_senha(){
-        return($this->senha);
+    public function get_Senha()
+    {
+        return ($this->senha);
     }
-    
-    public function set_senha($senha){
+
+    public function set_Senha($senha)
+    {
         $this->senha = $senha;
     }
-
-
-    
-
 }
-
-
-
-?>

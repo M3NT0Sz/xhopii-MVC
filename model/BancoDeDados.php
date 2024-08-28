@@ -24,11 +24,17 @@ class BancoDeDados
         return ($conexao);
     }
 
-    public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha)
+    public function inserirCliente($cliente)
     {
         $conexao = $this->conectarBD();
-        $consulta = "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
-                     VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$senha')";
+        $consulta = "INSERT INTO produto (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
+                     VALUES ('$cliente->get_Cpf()',
+                             '$cliente->get_Nome()',
+                             '$cliente->get_Sobrenome()',
+                             '$cliente->get_DataNasc()',
+                             '$cliente->get_Telefone()',
+                             '$cliente->get_Email()',
+                             '$cliente->get_Senha()')";
         mysqli_query($conexao, $consulta);
     }
 
@@ -44,12 +50,17 @@ class BancoDeDados
         mysqli_query($conexao, $consulta);
     }
 
-    public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario)
+    public function inserirFuncionario($funcionario)
     {
-
         $conexao = $this->conectarBD();
-        $consulta = "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
-                     VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$salario')";
+        $consulta = "INSERT INTO produto (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
+                     VALUES ('$funcionario->get_Cpf()',
+                             '$funcionario->get_Nome()',
+                             '$funcionario->get_Sobrenome()',
+                             '$funcionario->get_DataNasc()',
+                             '$funcionario->get_Telefone()',
+                             '$funcionario->get_Email()',
+                             '$funcionario->get_Salario()')";
         mysqli_query($conexao, $consulta);
     }
 
