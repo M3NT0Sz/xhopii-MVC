@@ -22,6 +22,14 @@ class Controlador
         $produto = new Produto($nome, $fabricante, $descricao, $valor);
         $this->bancoDeDados->inserirProduto($produto);
     }
+    public function cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha){
+        $cliente = new Cliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
+        $this->bancoDeDados->inserirCliente($cliente);
+    }
+    public function cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario){
+        $funcionario = new Funcionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
+        $this->bancoDeDados->inserirFuncionario($funcionario);
+    }
 
 
 
