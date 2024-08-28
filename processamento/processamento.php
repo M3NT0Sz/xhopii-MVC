@@ -32,7 +32,7 @@ if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
     $senha = $_POST['inputSenha'];
     
     #MODIFICAR PARA MVC CONTROLADOR
-    inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
+    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
 
     header('Location:../view/cadastroCliente.php');
     die();
@@ -53,7 +53,7 @@ if(isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) &&
     $salario = $_POST['inputSalarioFunc'];
     
     #MODIFICAR PARA MVC CONTROLADOR
-    inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
+    $controlador->cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
 
     header('Location:../view/cadastroFuncionario.php');
     die();
@@ -68,7 +68,7 @@ if(!empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) &&
     $descricao = $_POST['inputDescricaoProd'];
     $valor = $_POST['inputValorProd'];
 
-    $contrlador->cadastrarProduto($nome, $fabricante, $descricao, $valor);
+    $controlador->cadastrarProduto($nome, $fabricante, $descricao, $valor);
 
     header('Location:../view/cadastroProduto.php');
     die();
