@@ -6,7 +6,7 @@ require "../controller/Controlador.php";
 $controlador = new Controlador();
 
 //Login
-if(isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])){
+if (isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])) {
 
     $_SESSION['estaLogado'] = TRUE;
     $email = $_POST['inputEmailLog'];
@@ -18,50 +18,56 @@ if(isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])){
 }
 
 //Cadastro de Cliente
-if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) && 
-   isset($_POST['inputCPF']) && isset($_POST['inputDataNasc']) && 
-   isset($_POST['inputTelefone']) && isset($_POST['inputEmail']) &&
-   isset($_POST['inputSenha'])){
+if (
+    isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
+    isset($_POST['inputCPF']) && isset($_POST['inputDataNasc']) &&
+    isset($_POST['inputTelefone']) && isset($_POST['inputEmail']) &&
+    isset($_POST['inputSenha'])
+) {
 
     $nome = $_POST['inputNome'];
     $sobrenome = $_POST['inputSobrenome'];
     $cpf = $_POST['inputCPF'];
-    $dataNasc = $_POST['inputDataNasc'];
+    $dataNascimento = $_POST['inputDataNasc'];
     $telefone = $_POST['inputTelefone'];
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
-    
+
     #MODIFICAR PARA MVC CONTROLADOR
-    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
+    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNascimento, $telefone, $email, $senha);
 
     header('Location:../view/cadastroCliente.php');
     die();
 }
 
 //Cadastro de Funcionário
-if(isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) && 
-   isset($_POST['inputCPFFunc']) && isset($_POST['inputDataNascFunc']) && 
-   isset($_POST['inputTelefoneFunc']) && isset($_POST['inputEmailFunc']) &&
-   isset($_POST['inputSalarioFunc'])){
+if (
+    isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) &&
+    isset($_POST['inputCPFFunc']) && isset($_POST['inputDataNascFunc']) &&
+    isset($_POST['inputTelefoneFunc']) && isset($_POST['inputEmailFunc']) &&
+    isset($_POST['inputSalarioFunc'])
+) {
 
     $nome = $_POST['inputNomeFunc'];
     $sobrenome = $_POST['inputSobrenomeFunc'];
     $cpf = $_POST['inputCPFFunc'];
-    $dataNasc = $_POST['inputDataNascFunc'];
+    $dataNascimento = $_POST['inputDataNascFunc'];
     $telefone = $_POST['inputTelefoneFunc'];
     $email = $_POST['inputEmailFunc'];
     $salario = $_POST['inputSalarioFunc'];
-    
+
     #MODIFICAR PARA MVC CONTROLADOR
-    $controlador->cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
+    $controlador->cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNascimento, $telefone, $salario, $email);
 
     header('Location:../view/cadastroFuncionario.php');
     die();
 }
 
 //Cadastro de Produto
-if(!empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) && 
-   !empty($_POST['inputDescricaoProd']) && !empty($_POST['inputValorProd'])){
+if (
+    !empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) &&
+    !empty($_POST['inputDescricaoProd']) && !empty($_POST['inputValorProd'])
+) {
 
     $nome = $_POST['inputNomeProd'];
     $fabricante = $_POST['inputFabricanteProd'];
@@ -73,5 +79,3 @@ if(!empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) &&
     header('Location:../view/cadastroProduto.php');
     die();
 }
-
-?>

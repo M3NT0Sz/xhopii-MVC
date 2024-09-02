@@ -11,19 +11,19 @@ class Cliente
 
     protected $dataNascimento;
 
-    protected $tele;
+    protected $telefone;
 
     protected $email;
 
     protected $senha;
 
-    public function __construct($nome, $sobrenome, $cpf, $dataNascimento, $tele, $email, $senha)
+    public function __construct($cpf, $nome, $sobrenome, $dataNascimento, $telefone, $email, $senha)
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
         $this->cpf = $cpf;
         $this->dataNascimento = $dataNascimento;
-        $this->tele = $tele;
+        $this->telefone = $telefone;
         $this->email = $email;
         $this->senha = $senha;
     }
@@ -58,24 +58,24 @@ class Cliente
         $this->cpf = $cpf;
     }
 
-    public function get_DataNasc()
+    public function get_DataNascimento()
     {
         return ($this->dataNascimento);
     }
 
-    public function set_DataNasc($dataNascimento)
+    public function set_DataNascimento($dataNascimento)
     {
         $this->dataNascimento = $dataNascimento;
     }
 
     public function get_Telefone()
     {
-        return ($this->tele);
+        return ($this->telefone);
     }
 
-    public function set_Telefone($tele)
+    public function set_Telefone($telefone)
     {
-        $this->tele = $tele;
+        $this->telefone = $telefone;
     }
 
     public function get_Email()

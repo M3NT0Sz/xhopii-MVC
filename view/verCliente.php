@@ -1,9 +1,10 @@
 <?php
-    require "../processamento/funcoesBD.php";
+require_once "../controller/Controlador.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -11,6 +12,7 @@
     <link rel="icon" href="../img/logo.png" type="image/png">
     <title>Xhopii - Ver Clientes</title>
 </head>
+
 <body>
 
     <header>
@@ -39,16 +41,9 @@
         <section class="conteudo-visualizar-box">
             <h1>Clientes</h1>
             <?php
-                $listaClientes = retornarClientes();
-                while($cliente = mysqli_fetch_assoc($listaClientes)){
-                    echo "<section class=\"conteudo-bloco\">";
-                    echo "<h2>" . $cliente["nome"] . " " . $cliente["sobrenome"] . "</h2>";
-                    echo "<p>CPF: " . $cliente["cpf"] . "</p>";
-                    echo "<p>Data Nascimento: " . $cliente["dataNascimento"] . "</p>";
-                    echo "<p>Telefone: " . $cliente["telefone"] . "</p>";
-                    echo "<p>E-mail: " . $cliente["email"] . "</p>";
-                    echo "</section>";
-                }
+            #CORRETO COM USO DO CONTROLADOR
+            $controlador = new Controlador();
+            echo $controlador->visualizarCliente();
             ?>
         </section>
     </section>
@@ -59,4 +54,5 @@
         <p>© 2022 Xhopii. Todos os direitos reservados</p>
     </footer>
 </body>
+
 </html>

@@ -27,40 +27,39 @@ class BancoDeDados
     public function inserirCliente($cliente)
     {
         $conexao = $this->conectarBD();
-        $consulta = "INSERT INTO produto (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
-                     VALUES ('$cliente->get_Cpf()',
-                             '$cliente->get_Nome()',
-                             '$cliente->get_Sobrenome()',
-                             '$cliente->get_DataNasc()',
-                             '$cliente->get_Telefone()',
-                             '$cliente->get_Email()',
-                             '$cliente->get_Senha()')";
+        $consulta = "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
+                     VALUES ('" . $cliente->get_Cpf() . "',
+                             '" . $cliente->get_Nome() . "',
+                             '" . $cliente->get_Sobrenome() . "',
+                             '" . $cliente->get_DataNascimento() . "',
+                             '" . $cliente->get_Telefone() . "',
+                             '" . $cliente->get_Email() . "',
+                             '" . $cliente->get_Senha() . "')";
         mysqli_query($conexao, $consulta);
     }
 
     public function inserirProduto($produto)
     {
-
         $conexao = $this->conectarBD();
         $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor) 
-                     VALUES ('$produto->get_Nome()',
-                             '$produto->get_Fabricante()',
-                             '$produto->get_Descricao()',
-                             '$produto->get_Valor()')";
+                     VALUES ('" . $produto->get_Nome() . "',
+                      '" . $produto->get_Fabricante() . "',
+                       '" . $produto->get_Descricao() . "',
+                        '" . $produto->get_Valor() . "')";
         mysqli_query($conexao, $consulta);
     }
 
     public function inserirFuncionario($funcionario)
     {
         $conexao = $this->conectarBD();
-        $consulta = "INSERT INTO produto (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
-                     VALUES ('$funcionario->get_Cpf()',
-                             '$funcionario->get_Nome()',
-                             '$funcionario->get_Sobrenome()',
-                             '$funcionario->get_DataNasc()',
-                             '$funcionario->get_Telefone()',
-                             '$funcionario->get_Email()',
-                             '$funcionario->get_Salario()')";
+        $consulta = "INSERT INTO funcionarios (cpf, nome, sobrenome, dataNascimento, telefone, salario, email) 
+                     VALUES ('" . $funcionario->get_Cpf() . "',
+                             '" . $funcionario->get_Nome() . "',
+                             '" . $funcionario->get_Sobrenome() . "',
+                             '" . $funcionario->get_DataNascimento() . "',
+                             '" . $funcionario->get_Telefone() . "',
+                             '" . $funcionario->get_Salario() . "',
+                             '" . $funcionario->get_Email() . "')";
         mysqli_query($conexao, $consulta);
     }
 
@@ -83,7 +82,7 @@ class BancoDeDados
     public function retornarFuncionarios()
     {
         $conexao = $this->conectarBD();
-        $consulta = "SELECT * FROM funcionario";
+        $consulta = "SELECT * FROM funcionarios";
         $listaFuncionarios = mysqli_query($conexao, $consulta);
         return $listaFuncionarios;
     }

@@ -1,11 +1,10 @@
 <?php
-    
-    require_once "../controller/Controlador.php";
-
+require_once "../controller/Controlador.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -13,6 +12,7 @@
     <link rel="icon" href="../img/logo.png" type="image/png">
     <title>Xhopii - Ver Produtos</title>
 </head>
+
 <body>
 
     <header>
@@ -41,9 +41,9 @@
         <section class="conteudo-visualizar-box">
             <h1>Produtos</h1>
             <?php
-                #CORRETO COM USO DO CONTROLADOR
-                $controlador = new Controlador();
-                echo $controlador->visualizarProduto();
+            #CORRETO COM USO DO CONTROLADOR
+            $controlador = new Controlador();
+            echo $controlador->visualizarProduto();
             ?>
         </section>
     </section>
@@ -54,4 +54,5 @@
         <p>© 2022 Xhopii. Todos os direitos reservados</p>
     </footer>
 </body>
+
 </html>

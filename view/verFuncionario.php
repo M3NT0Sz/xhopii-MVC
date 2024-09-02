@@ -1,11 +1,10 @@
 <?php
-    
-    require "../processamento/funcoesBD.php";
-
+require_once "../controller/Controlador.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -13,6 +12,7 @@
     <link rel="icon" href="../img/logo.png" type="image/png">
     <title>Xhopii - Ver Produtos</title>
 </head>
+
 <body>
 
     <header>
@@ -41,6 +41,11 @@
         <section class="conteudo-visualizar-box">
             <h1>Funcionários</h1>
             <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->
+            <?php
+            #CORRETO COM USO DO CONTROLADOR
+            $controlador = new Controlador();
+            echo $controlador->visualizarFuncionario();
+            ?>
         </section>
     </section>
 
@@ -50,4 +55,5 @@
         <p>© 2022 Xhopii. Todos os direitos reservados</p>
     </footer>
 </body>
+
 </html>

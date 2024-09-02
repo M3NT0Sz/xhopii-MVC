@@ -21,42 +21,42 @@ class Produto
     //Getter e Setter
     public function get_Nome()
     {
-        return ($this->nome);
+        return($this->nome);
     }
 
-    public function set_Nome($Nome)
+    public function set_Nome($nome)
     {
-        $this->nome = $Nome;
+        $this->nome = $nome;
     }
 
     public function get_Fabricante()
     {
-        return ($this->fabricante);
+        return($this->fabricante);
     }
 
-    public function set_Fabricante($Fabricante)
+    public function set_Fabricante($fabricante)
     {
-        $this->fabricante = $Fabricante;
+        $this->fabricante = $fabricante;
     }
 
     public function get_Descricao()
     {
-        return ($this->descricao);
+        return($this->descricao);
     }
 
-    public function set_Descricao($Descricao)
+    public function set_Descricao($descricao)
     {
-        $this->descricao = $Descricao;
+        $this->descricao = $descricao;
     }
 
     public function get_Valor()
     {
-        return ($this->valor);
+        return($this->valor);
     }
 
-    public function set_Valor($Valor)
+    public function set_Valor($valor)
     {
-        $this->valor = $Valor;
+        $this->valor = $valor;
     }
     
     //Métodos
