@@ -63,6 +63,19 @@ class BancoDeDados
         mysqli_query($conexao, $consulta);
     }
 
+    public function verificaCliente($email, $senha)
+    {
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
+        $resultado = mysqli_query($conexao, $consulta);
+        $cliente = mysqli_fetch_assoc($resultado);
+        if ($cliente) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function retornarClientes()
     {
         $conexao = $this->conectarBD();

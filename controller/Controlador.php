@@ -36,6 +36,15 @@ class Controlador
         $this->bancoDeDados->inserirFuncionario($funcionario);
     }
 
+    public function clienteLogado($email, $senha)
+    {
+        if ($this->bancoDeDados->verificaCliente($email, $senha)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function visualizarProduto()
     {
         $produtos = '';
@@ -82,5 +91,4 @@ class Controlador
         }
         return $funcionarios;
     }
-    
 }

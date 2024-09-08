@@ -7,13 +7,16 @@ $controlador = new Controlador();
 
 //Login
 if (isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])) {
-
-    $_SESSION['estaLogado'] = TRUE;
     $email = $_POST['inputEmailLog'];
     $senha = $_POST['inputSenhaLog'];
 
-    //echo "Email: " . $email . "Senha: " . $senha;
-    header('Location:../view/home.php');
+    if ($controlador->clienteLogado($email, $senha)) {
+        $_SESSION['estaLogado'] = TRUE;
+        header('Location:../view/home.php');
+    } else {
+        header('Location:../view/login.php');
+    }
+
     die();
 }
 
